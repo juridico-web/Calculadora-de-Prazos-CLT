@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", serif;
+
+  --color-bg: #E4E3E0;
+  --color-ink: #141414;
+  --color-line: #141414;
+  --color-accent: #2980b9;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-bg text-ink;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-white border border-line p-5 flex flex-col transition-all;
+  }
+
+  .card-title {
+    @apply font-serif italic text-[11px] uppercase opacity-60 border-b border-gray-100 pb-1 mb-4 tracking-wider;
+  }
+
+  .bento-input {
+    @apply w-full border border-gray-300 p-2 text-[13px] bg-[#f9f9f9] focus:outline-none focus:ring-1 focus:ring-accent transition-all;
+  }
+
+  .bento-label {
+    @apply block text-[10px] font-bold uppercase mb-1 tracking-tight;
+  }
+
+  .bento-btn {
+    @apply border border-line p-2.5 cursor-pointer font-bold uppercase text-[11px] transition-all flex items-center justify-center gap-2;
+  }
+
+  .bento-btn-primary {
+    @apply bg-ink text-bg hover:bg-accent hover:text-white hover:border-accent;
+  }
+}
